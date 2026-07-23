@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+}
+
+@layer utilities {
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .animate-slide-left {
+        animation: slideInLeft 0.9s ease-out forwards;
+    }
+
+    .animate-slide-right {
+        animation: slideInRight 0.9s ease-out forwards;
+    }
+}
